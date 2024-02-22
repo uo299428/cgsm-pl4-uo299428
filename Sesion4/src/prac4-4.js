@@ -172,7 +172,7 @@ if ( WEBGL.isWebGLAvailable() ) {
         stats.update( );
         //added code in functions to organize them
         intersectObject();   
-        detectCollisions();
+        detectCollisions(delta);
         // Render the scene
         renderer.render( scene, camera );
 
@@ -230,7 +230,7 @@ if ( WEBGL.isWebGLAvailable() ) {
     renderer.render( scene, camera );
 }, false );
 
-function detectCollisions(){
+function detectCollisions(delta){
     movements.forEach(direction => {
         let collisions;
         const distance = 20; // Maximum distance of a collision
